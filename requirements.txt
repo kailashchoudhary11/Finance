@@ -1,0 +1,7 @@
+django
+crispy-forms
+requests
+psycopg2
+gunicorn
+django-heroku
+whitenoise

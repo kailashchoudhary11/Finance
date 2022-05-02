@@ -1,0 +1,25 @@
+{% extends "home/layout.html" %}
+{% block title %}Log In{% endblock %}
+{% block main %}
+    {% load get_type %}    
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="mb-3">{{ form.username }}
+        </div>
+        <div class="mb-3">{{ form.password }}</div>
+        {% for key, value in form.errors.items %}
+            {{ value }}
+        {% endfor %}
+        <input type="hidden" name="next" value="{% url 'home:index' %}">
+        <button class="btn btn-primary text-center"d E type="submit">Log In</button>
+    </form>
+    <script>
+        inputs = document.getElementsByTagName("input");
+        for (let i = 1; i < inputs.length; i++) {
+            inputs[i].placeholder = inputs[i].name.charAt(0).toUpperCase() + inputs[i].name.substring(1);
+            inputs[i].classList.add("form-control")
+            inputs[i].classList.add("mx-auto")
+            inputs[i].classList.add("w-auto")
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "home/layout.html" %}
+{% block title %}quote{% endblock %}
+{% block main %}
+{% load get_type %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in object_list %}
+                <tr>
+                    <td class="text-start">{{ row.symbol|upper }}</td>
+                    <td class="text-end">
+                        {% if row.category == "Sold" %}
+                            -{{ row.shares }}
+                        {% else %}
+                            {{ row.shares }}
+                        {% endif %}
+                    </td>
+                    <td class="text-end">{{ row.price|usd }}</td>
+                    <td class="text-end">{{ row.time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
