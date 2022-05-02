@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e1^1ag@o^^a0izh+tn^&#7&&x-=e7vy6c)k8!y3-82#1r_n&(i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["demostock.herokuapp.com", "127.0.0.1"]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Application definition
