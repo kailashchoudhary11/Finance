@@ -1,5 +1,5 @@
 django
-crispy-forms
+django-crispy-forms
 requests
 psycopg2
 gunicorn
