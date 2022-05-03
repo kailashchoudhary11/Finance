@@ -3,6 +3,6 @@ django-crispy-forms
 requests
 psycopg2
 gunicorn
-whitenoise
+whitenoise 
 django-heroku
 Pillow
