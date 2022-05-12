@@ -1,8 +1,10 @@
 import requests
-import os
 import json
+from dotenv import load_dotenv
+import os 
 from urllib.parse import quote_plus
 from django.shortcuts import render
+load_dotenv()
 
 def apology(request, message, code=400):
     """Render message as an apology to user."""
@@ -23,7 +25,7 @@ def lookup(symbol):
 
     # Contact API
     try:
-        api_key = "pk_81fd8848db9e4f239d661690a2b11612"
+        api_key = os.getenv("API_KEY")
         url = f"https://cloud.iexapis.com/stable/stock/{quote_plus(symbol)}/quote?token={api_key}"
         response = requests.get(url)
         response.raise_for_status()
